@@ -86,7 +86,7 @@ def automatically_determine_filetype(
         filetype = FileType.hdf5
     elif magic_bytes.startswith(b"GRIB"):
         filetype = FileType.grib
-    elif magic_bytes.startswith(b"II*"):
+    elif magic_bytes.startswith(b"II*") or magic_bytes.startswith(b"II+"):
         filetype = FileType.tiff
     elif magic_bytes.startswith(b"SIMPLE"):
         filetype = FileType.fits
